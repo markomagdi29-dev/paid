@@ -69,12 +69,8 @@
 <body class="bg-gray-100">
 
     <div id="app-container">
-        <!-- ======================================== -->
-        <!--        Authentication Section          -->
-        <!-- ======================================== -->
         <section id="auth-section" class="min-h-screen flex items-center justify-center bg-gray-200 p-4 section-fade-in">
             <div class="w-full max-w-md">
-                <!-- Login Form -->
                 <div id="login-form-container">
                     <div class="bg-white rounded-xl shadow-2xl p-8">
                         <div class="text-center mb-8">
@@ -106,7 +102,6 @@
                     </div>
                 </div>
 
-                <!-- Registration Form -->
                 <div id="register-form-container" class="hidden">
                      <div class="bg-white rounded-xl shadow-2xl p-8">
                         <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">حساب جديد</h2>
@@ -160,9 +155,6 @@
             </div>
         </section>
         
-        <!-- ======================================== -->
-        <!--      Verification Sections (Email & Phone) -->
-        <!-- ======================================== -->
         <section id="email-verification-section" class="hidden min-h-screen flex items-center justify-center bg-gray-200 p-4 section-fade-in">
              <div class="w-full max-w-md">
                 <div class="bg-white rounded-xl shadow-2xl p-8 text-center">
@@ -215,12 +207,8 @@
             </div>
         </section>
 
-        <!-- ======================================== -->
-        <!--        Main Application Dashboard        -->
-        <!-- ======================================== -->
         <main id="main-app-section" class="hidden">
             <div class="flex h-screen bg-gray-200">
-                <!-- Sidebar (Desktop) -->
                 <aside class="w-64 bg-gray-800 text-white flex-shrink-0 hidden md:flex md:flex-col">
                     <div class="p-6 text-center">
                         <h1 class="text-3xl font-bold text-white tracking-wider"><span style="color: #4F46E5;">PAID</span><span style="color: #0D9488;">POP</span></h1>
@@ -238,9 +226,7 @@
                     </div>
                 </aside>
 
-                <!-- Main Content -->
                 <div class="flex-1 flex flex-col overflow-hidden">
-                    <!-- Header -->
                     <header class="bg-white shadow-md p-4 flex justify-between items-center">
                          <h2 id="page-title" class="text-xl font-bold">لوحة التحكم</h2>
                         <div class="flex items-center gap-2">
@@ -251,13 +237,10 @@
                                 <span>الرصيد: </span>
                                 <span id="user-balance">0.00</span> ج.م
                             </div>
-                            <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=U" alt="User Avatar" class="rounded-full w-10 h-10 border-2 border-gray-300">
-                        </div>
+                            </div>
                     </header>
 
-                    <!-- Page Content -->
                     <div class="flex-1 p-4 md:p-6 overflow-y-auto pb-24">
-                        <!-- Dashboard Content -->
                         <div id="dashboard-content" class="content-section section-fade-in">
                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
                                 <div class="bg-white p-6 rounded-xl shadow-lg flex items-center">
@@ -298,12 +281,10 @@
                             </div>
                         </div>
 
-                        <!-- Watch Videos Content -->
                         <div id="videos-content" class="content-section hidden section-fade-in">
                             <div id="video-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
                         </div>
 
-                        <!-- Withdraw Content -->
                         <div id="withdraw-content" class="content-section hidden section-fade-in">
                             <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg">
                                 <h3 class="text-2xl font-bold mb-6 text-center">سحب الأرباح</h3>
@@ -334,11 +315,16 @@
                             </div>
                         </div>
 
-                        <!-- Profile Content -->
                         <div id="profile-content" class="content-section hidden section-fade-in">
                             <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg">
-                                <h3 class="text-2xl font-bold mb-6 text-center">بيانات الحساب</h3>
-                                
+                                <h3 class="text-2xl font-bold mb-2 text-center">بيانات الحساب</h3>
+                                <div class="relative w-24 h-24 mx-auto mb-4 group">
+                                    <img id="profile-avatar" src="https://placehold.co/96x96/E2E8F0/4A5568?text=U" alt="User Avatar" class="rounded-full w-full h-full object-cover border-4 border-gray-200">
+                                    <label for="avatar-upload" class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-full text-white text-xs opacity-0 group-hover:opacity-100 transition cursor-pointer">
+                                        <i class="fas fa-camera mr-1"></i> تغيير
+                                    </label>
+                                    <input type="file" id="avatar-upload" class="hidden" accept="image/*">
+                                </div>
                                 <div class="space-y-4">
                                     <div class="mb-4">
                                         <label for="profile-name" class="block text-sm font-bold text-gray-600 mb-2">الاسم</label>
@@ -384,7 +370,6 @@
                         </div>
                     </div>
 
-                    <!-- Bottom Navigation (Mobile) -->
                     <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-gray-800 text-white flex justify-around p-1 shadow-lg z-10">
                         <a href="#" data-section="dashboard" class="bottom-nav-link flex flex-col items-center text-center text-xs w-full p-2 rounded-md active">
                             <i class="fas fa-tachometer-alt text-xl mb-1"></i><span>لوحة التحكم</span>
@@ -404,7 +389,6 @@
         </main>
     </div>
 
-    <!-- Modals -->
     <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-50">
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl relative">
             <button id="close-modal-btn" class="absolute -top-3 -right-3 bg-red-500 text-white rounded-full h-8 w-8 flex items-center justify-center text-lg z-10">&times;</button>
@@ -480,7 +464,6 @@
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-md relative">
             <button id="close-password-modal-btn" class="absolute -top-3 -right-3 bg-red-500 text-white rounded-full h-8 w-8 flex items-center justify-center text-lg z-10">&times;</button>
             
-            <!-- Step 1: Phone Verification -->
             <div id="password-phone-verification-step" class="p-8">
                 <h3 class="text-2xl font-bold mb-6 text-center">إثبات الهوية</h3>
                 <p class="text-center text-gray-600 mb-4">لتغيير كلمة المرور، الرجاء إدخال رقم الهاتف المسجل بحسابك.</p>
@@ -495,7 +478,6 @@
                 </form>
             </div>
     
-            <!-- Step 2: New Password -->
             <div id="new-password-step" class="hidden p-8">
                  <h3 class="text-2xl font-bold mb-6 text-center">إدخال كلمة المرور الجديدة</h3>
                  <form id="new-password-form">
@@ -515,7 +497,6 @@
         </div>
     </div>
 
-    <!-- Toast Notification -->
     <div id="toast-notification" class="fixed bottom-5 right-5 bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-500 z-50">
         <p id="toast-message"></p>
     </div>
@@ -545,7 +526,8 @@
                     { id: 12, title: "Hamza Namira - Fady Shewaya", duration: 10, reward: 3.10, youtubeId: "bNYt_OR2t-M", watched: false },
                     { id: 13, title: "Mohamed Mounir - El Lela Ya Samra", duration: 10, reward: 2.80, youtubeId: "I2aZNo2f35w", watched: false },
                     { id: 14, title: "Assala - Bent Akaber", duration: 10, reward: 2.90, youtubeId: "OnfAxxL-hIE", watched: false },
-                    { id: 15, title: "Balti - Ya Lili feat. Hamouda", duration: 10, reward: 2.70, youtubeId: "1E60Q48_v7M", watched: false }
+                    { id: 15, title: "Balti - Ya Lili feat. Hamouda", duration: 10, reward: 2.70, youtubeId: "1E60Q48_v7M", watched: false },
+                    { id: 16, title: "FloyyMenor, Cris MJ - Gata Only", duration: 15, reward: 5.00, youtubeId: "-r687V8yqKY", watched: false }
                 ],
                 plans: {
                     'Free': { name: 'المجانية', videos: 5, price: 0, icon: 'fa-star' },
@@ -558,6 +540,8 @@
 
             // DOM Elements
             const allElements = {
+                profileAvatar: document.getElementById('profile-avatar'),
+                avatarUploadInput: document.getElementById('avatar-upload'),
                 authSection: document.getElementById('auth-section'),
                 emailVerificationSection: document.getElementById('email-verification-section'),
                 phoneVerificationSection: document.getElementById('phone-verification-section'),
@@ -627,6 +611,16 @@
                 setTimeout(() => { allElements.toast.classList.remove('show'); }, 3000);
             }
 
+            function loadAndDisplayAvatar() {
+                if (!appState.currentUser) return;
+                const savedAvatar = localStorage.getItem(`avatar_${appState.currentUser}`);
+                if (savedAvatar) {
+                    allElements.profileAvatar.src = savedAvatar;
+                } else {
+                    allElements.profileAvatar.src = 'https://placehold.co/96x96/E2E8F0/4A5568?text=U';
+                }
+            }
+
             function logout() {
                 appState.loggedIn = false;
                 appState.currentUser = null;
@@ -655,6 +649,7 @@
                     updateDashboard();
                     renderVideoList();
                     renderSubscriptionPlans();
+                    loadAndDisplayAvatar();
                 } else {
                     allElements.authSection.classList.remove('hidden');
                     allElements.mainAppSection.classList.add('hidden');
@@ -671,7 +666,11 @@
             function showSection(sectionId) {
                 allElements.contentSections.forEach(section => section.classList.add('hidden'));
                 document.getElementById(`${sectionId}-content`).classList.remove('hidden');
-                if (sectionId === 'profile') renderSubscriptionPlans();
+                
+                if (sectionId === 'profile') {
+                    renderSubscriptionPlans();
+                    loadAndDisplayAvatar();
+                }
 
                 let newTitle = '';
                 allElements.navLinks.forEach(link => {
@@ -1035,10 +1034,29 @@
                 setTimeout(logout, 1500);
             });
             
+            allElements.avatarUploadInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file && file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        const base64Image = e.target.result;
+                        
+                        allElements.profileAvatar.src = base64Image;
+
+                        if (appState.currentUser) {
+                            localStorage.setItem(`avatar_${appState.currentUser}`, base64Image);
+                            showToast('تم تحديث الصورة بنجاح!');
+                        }
+                    };
+
+                    reader.readAsDataURL(file);
+                }
+            });
+
             // Initial Load
             updateUI();
         });
     </script>
 </body>
 </html>
-
