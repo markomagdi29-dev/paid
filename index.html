@@ -216,6 +216,7 @@
                     <nav class="mt-10 flex-1">
                         <a href="#" data-section="dashboard" class="nav-link bg-gray-700 block py-3 px-6 text-sm hover:bg-gray-700 transition"><i class="fas fa-tachometer-alt w-6 mr-2"></i> لوحة التحكم</a>
                         <a href="#" data-section="videos" class="nav-link block py-3 px-6 text-sm hover:bg-gray-700 transition"><i class="fas fa-video w-6 mr-2"></i> شاهد واربح</a>
+                        <a href="#" data-section="subscribe" class="nav-link block py-3 px-6 text-sm hover:bg-gray-700 transition"><i class="fas fa-gem w-6 mr-2"></i> اشترك</a>
                         <a href="#" data-section="withdraw" class="nav-link block py-3 px-6 text-sm hover:bg-gray-700 transition"><i class="fas fa-hand-holding-usd w-6 mr-2"></i> سحب الأرباح</a>
                         <a href="#" data-section="profile" class="nav-link block py-3 px-6 text-sm hover:bg-gray-700 transition"><i class="fas fa-user-cog w-6 mr-2"></i> الملف الشخصي</a>
                     </nav>
@@ -237,7 +238,11 @@
                                 <span>الرصيد: </span>
                                 <span id="user-balance">0.00</span> ج.م
                             </div>
+                            <div class="bg-indigo-100 text-indigo-800 font-bold px-3 py-2 rounded-full text-xs">
+                                <i class="fas fa-star mr-1"></i><span id="header-user-plan"></span>
                             </div>
+                            <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=U" alt="User Avatar" class="rounded-full w-10 h-10 border-2 border-gray-300">
+                        </div>
                     </header>
 
                     <div class="flex-1 p-4 md:p-6 overflow-y-auto pb-24">
@@ -285,6 +290,18 @@
                             <div id="video-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
                         </div>
 
+                        <div id="subscribe-content" class="content-section hidden section-fade-in">
+                            <div id="subscription-section" class="max-w-4xl mx-auto">
+                                <h3 class="text-2xl font-bold mb-2 text-center">باقة اشتراكك</h3>
+                                <div class="bg-indigo-100 text-indigo-800 p-4 rounded-lg text-center font-bold text-lg mb-6">
+                                    <span>باقتك الحالية: </span>
+                                    <span id="current-plan-name"></span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-6 text-center">قم بترقية باقتك لمشاهدة المزيد!</h3>
+                                <div id="plans-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center"></div>
+                            </div>
+                        </div>
+
                         <div id="withdraw-content" class="content-section hidden section-fade-in">
                             <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg">
                                 <h3 class="text-2xl font-bold mb-6 text-center">سحب الأرباح</h3>
@@ -317,14 +334,8 @@
 
                         <div id="profile-content" class="content-section hidden section-fade-in">
                             <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg">
-                                <h3 class="text-2xl font-bold mb-2 text-center">بيانات الحساب</h3>
-                                <div class="relative w-24 h-24 mx-auto mb-4 group">
-                                    <img id="profile-avatar" src="https://placehold.co/96x96/E2E8F0/4A5568?text=U" alt="User Avatar" class="rounded-full w-full h-full object-cover border-4 border-gray-200">
-                                    <label for="avatar-upload" class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-full text-white text-xs opacity-0 group-hover:opacity-100 transition cursor-pointer">
-                                        <i class="fas fa-camera mr-1"></i> تغيير
-                                    </label>
-                                    <input type="file" id="avatar-upload" class="hidden" accept="image/*">
-                                </div>
+                                <h3 class="text-2xl font-bold mb-6 text-center">بيانات الحساب</h3>
+                                
                                 <div class="space-y-4">
                                     <div class="mb-4">
                                         <label for="profile-name" class="block text-sm font-bold text-gray-600 mb-2">الاسم</label>
@@ -358,15 +369,6 @@
                                     <i class="fas fa-key mr-2"></i>تغيير كلمة المرور
                                 </button>
                             </div>
-                            <div id="subscription-section" class="max-w-4xl mx-auto mt-8">
-                                <h3 class="text-2xl font-bold mb-2 text-center">باقة اشتراكك</h3>
-                                <div class="bg-indigo-100 text-indigo-800 p-4 rounded-lg text-center font-bold text-lg mb-6">
-                                    <span>باقتك الحالية: </span>
-                                    <span id="current-plan-name"></span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-6 text-center">قم بترقية باقتك لمشاهدة المزيد!</h3>
-                                <div id="plans-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center"></div>
-                            </div>
                         </div>
                     </div>
 
@@ -376,6 +378,9 @@
                         </a>
                         <a href="#" data-section="videos" class="bottom-nav-link flex flex-col items-center text-center text-xs w-full p-2 rounded-md">
                             <i class="fas fa-video text-xl mb-1"></i><span>شاهد واربح</span>
+                        </a>
+                         <a href="#" data-section="subscribe" class="bottom-nav-link flex flex-col items-center text-center text-xs w-full p-2 rounded-md">
+                            <i class="fas fa-gem text-xl mb-1"></i><span>اشترك</span>
                         </a>
                         <a href="#" data-section="withdraw" class="bottom-nav-link flex flex-col items-center text-center text-xs w-full p-2 rounded-md">
                             <i class="fas fa-hand-holding-usd text-xl mb-1"></i><span>سحب الأرباح</span>
@@ -512,27 +517,60 @@
                 currentUser: null,
                 tempUser: null,
                 videos: [
-                    { id: 1, title: "Amr Diab - Tamally Maak", duration: 10, reward: 1.50, youtubeId: "Bok8B6c3i5A", watched: false },
-                    { id: 2, title: "Nancy Ajram - Ah W Noss", duration: 10, reward: 1.00, youtubeId: "a-zU-898-kQ", watched: false },
-                    { id: 3, title: "Tamer Hosny - Kol Haga Bena", duration: 10, reward: 1.25, youtubeId: "L-kWz4yIhcM", watched: false },
-                    { id: 4, title: "حسين الجسمي - بشرة خير", duration: 10, reward: 1.75, youtubeId: "QUBvVT2-y7Q", watched: false },
-                    { id: 5, title: "Saad Lamjarred - LM3ALLEM", duration: 10, reward: 2.00, youtubeId: "_Fwf45pIAtM", watched: false },
-                    { id: 6, title: "Wegz - El Bakht", duration: 10, reward: 2.10, youtubeId: "g39-sC-T7cQ", watched: false },
-                    { id: 7, title: "Ruby - Hetta Tanya", duration: 10, reward: 2.20, youtubeId: "p_jwBlt_fH4", watched: false },
-                    { id: 8, title: "Ahmed Saad - Aleky Eyoun", duration: 10, reward: 2.30, youtubeId: "smH8-872-iA", watched: false },
-                    { id: 9, title: "Elissa - Aaks Elli Shayfenha", duration: 10, reward: 2.00, youtubeId: "h-DPNBpLPMo", watched: false },
-                    { id: 10, title: "Sherine - Keda Ya Albi", duration: 10, reward: 2.50, youtubeId: "6YV9-D3P-o8", watched: false },
-                    { id: 11, title: "Cairokee - Kan Lak Ma'aya", duration: 10, reward: 3.00, youtubeId: "h33xQ7_e-1E", watched: false },
-                    { id: 12, title: "Hamza Namira - Fady Shewaya", duration: 10, reward: 3.10, youtubeId: "bNYt_OR2t-M", watched: false },
-                    { id: 13, title: "Mohamed Mounir - El Lela Ya Samra", duration: 10, reward: 2.80, youtubeId: "I2aZNo2f35w", watched: false },
-                    { id: 14, title: "Assala - Bent Akaber", duration: 10, reward: 2.90, youtubeId: "OnfAxxL-hIE", watched: false },
-                    { id: 15, title: "Balti - Ya Lili feat. Hamouda", duration: 10, reward: 2.70, youtubeId: "1E60Q48_v7M", watched: false },
-                    { id: 16, title: "FloyyMenor, Cris MJ - Gata Only", duration: 15, reward: 5.00, youtubeId: "-r687V8yqKY", watched: false }
+                    { id: 1, title: "Amr Diab - Tamally Maak", duration: 10, youtubeId: "Bok8B6c3i5A", watched: false },
+                    { id: 2, title: "Nancy Ajram - Ah W Noss", duration: 10, youtubeId: "a-zU-898-kQ", watched: false },
+                    { id: 3, title: "Tamer Hosny - Kol Haga Bena", duration: 10, youtubeId: "L-kWz4yIhcM", watched: false },
+                    { id: 4, title: "حسين الجسمي - بشرة خير", duration: 10, youtubeId: "QUBvVT2-y7Q", watched: false },
+                    { id: 5, title: "Saad Lamjarred - LM3ALLEM", duration: 10, youtubeId: "_Fwf45pIAtM", watched: false },
+                    { id: 6, title: "Wegz - El Bakht", duration: 10, youtubeId: "g39-sC-T7cQ", watched: false },
+                    { id: 7, title: "Ruby - Hetta Tanya", duration: 10, youtubeId: "p_jwBlt_fH4", watched: false },
+                    { id: 8, title: "Ahmed Saad - Aleky Eyoun", duration: 10, youtubeId: "smH8-872-iA", watched: false },
+                    { id: 9, title: "Elissa - Aaks Elli Shayfenha", duration: 10, youtubeId: "h-DPNBpLPMo", watched: false },
+                    { id: 10, title: "Sherine - Keda Ya Albi", duration: 10, youtubeId: "6YV9-D3P-o8", watched: false },
+                    { id: 11, title: "Cairokee - Kan Lak Ma'aya", duration: 10, youtubeId: "h33xQ7_e-1E", watched: false },
+                    { id: 12, title: "Hamza Namira - Fady Shewaya", duration: 10, youtubeId: "bNYt_OR2t-M", watched: false },
+                    { id: 13, title: "Mohamed Mounir - El Lela Ya Samra", duration: 10, youtubeId: "I2aZNo2f35w", watched: false },
+                    { id: 14, title: "Assala - Bent Akaber", duration: 10, youtubeId: "OnfAxxL-hIE", watched: false },
+                    { id: 15, title: "Balti - Ya Lili feat. Hamouda", duration: 10, youtubeId: "1E60Q48_v7M", watched: false },
+                    { id: 16, title: "Video 16", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 17, title: "Video 17", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 18, title: "Video 18", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 19, title: "Video 19", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 20, title: "Video 20", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 21, title: "Video 21", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 22, title: "Video 22", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 23, title: "Video 23", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 24, title: "Video 24", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 25, title: "Video 25", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 26, title: "Video 26", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 27, title: "Video 27", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 28, title: "Video 28", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 29, title: "Video 29", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 30, title: "Video 30", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 31, title: "Video 31", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 32, title: "Video 32", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 33, title: "Video 33", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 34, title: "Video 34", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 35, title: "Video 35", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 36, title: "Video 36", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 37, title: "Video 37", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 38, title: "Video 38", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 39, title: "Video 39", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 40, title: "Video 40", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 41, title: "Video 41", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 42, title: "Video 42", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 43, title: "Video 43", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 44, title: "Video 44", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false },
+                    { id: 45, title: "Video 45", duration: 10, youtubeId: "dQw4w9WgXcQ", watched: false }
                 ],
                 plans: {
-                    'Free': { name: 'المجانية', videos: 5, price: 0, icon: 'fa-star' },
-                    'Gold': { name: 'الذهبية', videos: 10, price: 50, icon: 'fa-medal' },
-                    'Premium': { name: 'المميزة', videos: 15, price: 100, icon: 'fa-gem' }
+                    'Free':  { name: 'المجانية', videos: 2,  price: 0,       reward: 1,  icon: 'fa-star' },
+                    'A1':    { name: 'A1',      videos: 5,  price: 2500,    reward: 17, icon: 'fa-certificate' },
+                    'A2':    { name: 'A2',      videos: 10, price: 10000,   reward: 35, icon: 'fa-award' },
+                    'A3':    { name: 'A3',      videos: 20, price: 30000,   reward: 50, icon: 'fa-medal' },
+                    'A4':    { name: 'A4',      videos: 30, price: 48000,   reward: 55, icon: 'fa-trophy' },
+                    'A5':    { name: 'A5',      videos: 35, price: 70000,   reward: 67, icon: 'fa-gem' },
+                    'A6':    { name: 'A6',      videos: 45, price: 105000,  reward: 78, icon: 'fa-crown' }
                 },
                 currentVideo: null,
                 timerInterval: null
@@ -540,8 +578,6 @@
 
             // DOM Elements
             const allElements = {
-                profileAvatar: document.getElementById('profile-avatar'),
-                avatarUploadInput: document.getElementById('avatar-upload'),
                 authSection: document.getElementById('auth-section'),
                 emailVerificationSection: document.getElementById('email-verification-section'),
                 phoneVerificationSection: document.getElementById('phone-verification-section'),
@@ -600,6 +636,7 @@
                 passwordPhoneVerificationForm: document.getElementById('password-phone-verification-form'),
                 newPasswordForm: document.getElementById('new-password-form'),
                 registerNameInput: document.getElementById('register-name'),
+                headerUserPlan: document.getElementById('header-user-plan'),
             };
 
             // --- Functions ---
@@ -609,16 +646,6 @@
                 allElements.toast.style.backgroundColor = isSuccess ? '#22C55E' : '#EF4444'; // green-500 or red-500
                 allElements.toast.classList.add('show');
                 setTimeout(() => { allElements.toast.classList.remove('show'); }, 3000);
-            }
-
-            function loadAndDisplayAvatar() {
-                if (!appState.currentUser) return;
-                const savedAvatar = localStorage.getItem(`avatar_${appState.currentUser}`);
-                if (savedAvatar) {
-                    allElements.profileAvatar.src = savedAvatar;
-                } else {
-                    allElements.profileAvatar.src = 'https://placehold.co/96x96/E2E8F0/4A5568?text=U';
-                }
             }
 
             function logout() {
@@ -648,8 +675,6 @@
                     
                     updateDashboard();
                     renderVideoList();
-                    renderSubscriptionPlans();
-                    loadAndDisplayAvatar();
                 } else {
                     allElements.authSection.classList.remove('hidden');
                     allElements.mainAppSection.classList.add('hidden');
@@ -661,15 +686,21 @@
                 allElements.userBalance.textContent = userData.balance.toFixed(2);
                 allElements.totalEarningsStat.textContent = `${userData.totalEarnings.toFixed(2)} ج.م`;
                 allElements.videosWatchedStat.textContent = userData.videosWatched;
+                
+                // Update header user plan
+                const planKey = userData.subscription;
+                const plan = appState.plans[planKey];
+                if (plan && allElements.headerUserPlan) {
+                    allElements.headerUserPlan.textContent = plan.name;
+                }
             }
 
             function showSection(sectionId) {
                 allElements.contentSections.forEach(section => section.classList.add('hidden'));
                 document.getElementById(`${sectionId}-content`).classList.remove('hidden');
                 
-                if (sectionId === 'profile') {
+                if (sectionId === 'subscribe') {
                     renderSubscriptionPlans();
-                    loadAndDisplayAvatar();
                 }
 
                 let newTitle = '';
@@ -689,8 +720,12 @@
 
             function renderVideoList() {
                 const userData = appState.accounts[appState.currentUser].data;
+                const currentPlan = appState.plans[userData.subscription];
+                const rewardPerVideo = currentPlan.reward;
+                
                 allElements.videoList.innerHTML = '';
-                const videoLimit = appState.plans[userData.subscription].videos;
+                const videoLimit = currentPlan.videos;
+                
                 appState.videos.slice(0, videoLimit).forEach(video => {
                     allElements.videoList.innerHTML += `
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition">
@@ -699,7 +734,7 @@
                                 <h4 class="font-bold text-sm h-10">${video.title}</h4>
                                 <div class="flex justify-between items-center text-xs text-gray-500 mt-2">
                                     <span><i class="fas fa-clock mr-1"></i> ${video.duration} ثانية</span>
-                                    <span class="font-bold text-teal-600">${video.reward.toFixed(2)} ج.م</span>
+                                    <span class="font-bold text-teal-600">${rewardPerVideo.toFixed(2)} ج.م</span>
                                 </div>
                                 <button data-video-id="${video.id}" class="watch-btn mt-4 w-full text-sm font-bold py-2 px-4 rounded-lg transition ${video.watched ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 text-white'}">
                                     ${video.watched ? '<i class="fas fa-check-circle mr-2"></i> تمت' : '<i class="fas fa-play mr-2"></i> شاهد'}
@@ -721,8 +756,9 @@
                         <div class="plan-card bg-white p-6 rounded-xl shadow-lg border-2 ${isCurrent ? 'active' : 'border-transparent'}">
                             <i class="fas ${plan.icon} text-4xl mb-4 ${isCurrent ? 'text-teal-500' : 'text-gray-400'}"></i>
                             <h4 class="text-xl font-bold">${plan.name}</h4>
-                            <p class="text-gray-500 my-2">${plan.videos} فيديوهات يومياً</p>
-                            <p class="text-2xl font-bold mb-4">${plan.price > 0 ? plan.price + ' ج.م' : 'مجاناً'}</p>
+                            <p class="text-gray-500 my-1">${plan.videos} فيديوهات يومياً</p>
+                             <p class="text-gray-600 my-2 text-sm">(${plan.reward} جنيه ربح لكل فيديو)</p>
+                            <p class="text-2xl font-bold mb-4">${plan.price > 0 ? plan.price.toLocaleString() + ' ج.م' : 'مجاناً'}</p>
                             <button data-plan="${planKey}" class="upgrade-btn w-full font-bold py-2 px-4 rounded-lg transition ${isCurrent ? 'bg-gray-400 cursor-not-allowed' : 'bg-teal-600 hover:bg-teal-700 text-white'}" ${isCurrent ? 'disabled' : ''}>
                                 ${isCurrent ? 'باقتك الحالية' : 'الترقية الآن'}
                             </button>
@@ -906,9 +942,12 @@
             allElements.claimRewardBtn.addEventListener('click', () => {
                 const video = appState.currentVideo;
                 const userData = appState.accounts[appState.currentUser].data;
+                const currentPlan = appState.plans[userData.subscription];
+                const reward = currentPlan.reward;
+                
                 video.watched = true;
-                userData.balance += video.reward;
-                userData.totalEarnings += video.reward;
+                userData.balance += reward;
+                userData.totalEarnings += reward;
                 userData.videosWatched++;
                 updateDashboard();
                 renderVideoList();
@@ -1034,26 +1073,6 @@
                 setTimeout(logout, 1500);
             });
             
-            allElements.avatarUploadInput.addEventListener('change', function(event) {
-                const file = event.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        const base64Image = e.target.result;
-                        
-                        allElements.profileAvatar.src = base64Image;
-
-                        if (appState.currentUser) {
-                            localStorage.setItem(`avatar_${appState.currentUser}`, base64Image);
-                            showToast('تم تحديث الصورة بنجاح!');
-                        }
-                    };
-
-                    reader.readAsDataURL(file);
-                }
-            });
-
             // Initial Load
             updateUI();
         });
